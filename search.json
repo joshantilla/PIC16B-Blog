@@ -1,17 +1,17 @@
 [
   {
-    "objectID": "hw0.html",
-    "href": "hw0.html",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/hw0.html",
+    "href": "posts/hw0.html",
     "title": "HW0",
     "section": "",
     "text": "Tutorial for Visualizing Palmer Penguins data with a Histogram\n\nImporting Libraries and Reading Data\n\n#import pandas and pyplot, and read in the url of the data\nimport pandas as pd\nimport matplotlib.pyplot as plt\nurl = \"https://raw.githubusercontent.com/pic16b-ucla/24W/main/datasets/palmer_penguins.csv\"\npenguins = pd.read_csv(url)\n\n\n\nCreating the Plot\n\n#Create empty plot\nfig, ax = plt.subplots()\n\n#Set axes and title\nax.set(xlabel = \"Culmen Length (mm)\",\n       ylabel = \"Density\",\n       title = \"Density vs Culmen Length By Species and Island\")\n\n#Create species and island sets\nspecies = set(penguins['Species'])\nisland = set(penguins['Island'])\n\n#Loop through each island and each species\nfor s in species:\n    for i in island:\n        #Create a sub variable of penguins with the given species and island\n        sub = penguins[(penguins['Species'] == s) & (penguins['Island'] == i)]\n        sub = sub['Culmen Length (mm)'].dropna()\n        if sub.empty:\n            continue\n        #Create the graph of the specific group\n        ax.hist(sub, label = s.split(' ')[0] + ', ' + i.split(' ')[0], alpha = 0.5)\n\n#Add a legend\nax.legend()"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "PIC16B-BLOG",
-    "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 26, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Josh’s’ Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 23, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nCreating Posts\n\n\n\n\n\n\nWeek 3\n\n\n\n\n\n\n\n\n\nJan 21, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -77,10 +77,10 @@
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PIC16B-BLOG",
     "section": "",
-    "text": "About this blog"
+    "text": "HW0\n\n\n\n\n\n\nweek 3\n\n\nexample\n\n\n\n\n\n\n\n\n\nJan 27, 2025\n\n\nJoshua Antilla\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 26, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Josh’s’ Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 23, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nCreating Posts\n\n\n\n\n\n\nWeek 3\n\n\n\n\n\n\n\n\n\nJan 21, 2025\n\n\n\n\n\n\nNo matching items"
   }
 ]
