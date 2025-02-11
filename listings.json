@@ -2,7 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/hw2/index.html",
       "/posts/hw2.html",
+      "/posts/hw0/index.html",
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html",
       "/posts/bruin/index.html"
