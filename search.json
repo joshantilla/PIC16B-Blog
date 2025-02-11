@@ -1,24 +1,24 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
-    "objectID": "posts/hw0.html",
-    "href": "posts/hw0.html",
+    "objectID": "hw0.html",
+    "href": "hw0.html",
     "title": "HW0",
     "section": "",
     "text": "Tutorial for Visualizing Palmer Penguins data with a Histogram\n\nImporting Libraries and Reading Data\n\n#import pandas and pyplot, and read in the url of the data\nimport pandas as pd\nimport matplotlib.pyplot as plt\nurl = \"https://raw.githubusercontent.com/pic16b-ucla/24W/main/datasets/palmer_penguins.csv\"\npenguins = pd.read_csv(url)\n\n\n\nCreating the Plot\n\n#Create empty plot\nfig, ax = plt.subplots()\n\n#Set axes and title\nax.set(xlabel = \"Culmen Length (mm)\",\n       ylabel = \"Density\",\n       title = \"Density vs Culmen Length By Species and Island\")\n\n#Create species and island sets\nspecies = set(penguins['Species'])\nisland = set(penguins['Island'])\n\n#Loop through each island and each species\nfor s in species:\n    for i in island:\n        #Create a sub variable of penguins with the given species and island\n        sub = penguins[(penguins['Species'] == s) & (penguins['Island'] == i)]\n        sub = sub['Culmen Length (mm)'].dropna()\n        if sub.empty:\n            continue\n        #Create the graph of the specific group\n        ax.hist(sub, label = s.split(' ')[0] + ', ' + i.split(' ')[0], alpha = 0.5)\n\n#Add a legend\nax.legend()"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PIC16B-BLOG",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "Creating a Movie Recommendation Web Scraper\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 26, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Josh’s’ Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 23, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nCreating Posts\n\n\n\n\n\n\nWeek 3\n\n\n\n\n\n\n\n\n\nJan 21, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To Josh’s’ Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
     "objectID": "posts/bruin/index.html",
@@ -70,17 +70,24 @@
     "text": "Code\nThere are two main ways to insert code in your posts. When talking about a short concept, like the np.random.rand() function, you can type back ticks like this: `np.random.rand()`.\nTo create a larger block of code, use three consecutive backticks ``` to both open and close the code block. If you place the word “{python}” immediately after the opening code blocks, you’ll get attractive syntax highlighting:\n\ndef f(x):\n    \"\"\"\n    A cool function that multiples an input x by 2. \n    \"\"\"\n    return 2*x\n\ny = f(3)\nprint(y)\n\n6\n\n\nNot only that, once you render the page with Quarto, the code output will show up below. If that’s not what you want, use the word “python” instead of “{python}”\nLook at this other cool example from the Quarto tutorial.\nFor a demonstration of a line plot on a polar axis, see Figure 1.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To Josh’s’ Blog",
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "This is a post with executable code."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "PIC16B-BLOG",
+    "objectID": "posts/hw2.html",
+    "href": "posts/hw2.html",
+    "title": "Creating a Movie Recommendation Web Scraper",
     "section": "",
-    "text": "HW0\n\n\n\n\n\n\nweek 3\n\n\nexample\n\n\n\n\n\n\n\n\n\nJan 27, 2025\n\n\nJoshua Antilla\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 26, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Josh’s’ Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 23, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nCreating Posts\n\n\n\n\n\n\nWeek 3\n\n\n\n\n\n\n\n\n\nJan 21, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "In this blog post, I will show you how to make a web scraper using Scrapy that will recommend movies based on a movie that the user likes.\n\nSetting up\nWe will be exploring the movie database website: https://www.themoviedb.org/.\nTo start: in the terminal, activate your conda environment and then run:\nscrapy startproject TMDB_scraper\ncd TMDB_scraper\nThen, inside the spiders directory, create a tmdb_spider.py file. In this file, we import scrapy and create the spider class with its unique name and its initializer.\n\nimport scrapy\n\nclass TmdbSpider(scrapy.Spider):\n    name = 'tmdb_spider'\n\n    def __init__(self, subdir=\"\", *args, **kwargs):\n        self.start_urls = [f\"https://www.themoviedb.org/movie/{subdir}/\"]\n\n\n\nParsing Methods\nNext, we must make three parsing methods to go from a movie page to each of the actors in that movie to the movies that they starred in.\nFirst, we have parse(self, response).\nThis method starts on a movie page and navigates to the movie’s Full Cast & Crew page. We can get the link by simply adding ‘cast’ to the starting url.\n\ndef parse(self, response):\n    '''\n    The parse method\n    Assuming start is on a movie page\n    Navigate to Full Cast & Crew page\n    Yield a scrapy request for the Full Cast & Crew page\n    '''\n\n    # Get Full Cast & Crew link\n    link = self.start_urls[0] + 'cast'\n        \n    # Ask scrapy to visit the new link and once it gets there, \n    # call parse_full_credits\n    yield scrapy.Request(link, callback = self.parse_full_credits)\n\nNext, we have parse_full_credits(self, response).\nThis method starts on the Full Cast & Crew page, and sends a request to the links of each actor on the page. In order to only get the actor links and not the crew links, we use only the first entry of the css selector that gets the section of the page with cast and crew.\n\ndef parse_full_credits(self, response):\n    '''\n    The parse_full_credits method\n    Assuming start is on the Full Cast & Crew page\n    Yield a scrapy request for the page of each actor listed on the page\n    '''\n\n    #Get actor section\n    actor_section = response.css('section.panel.pad')[0]\n\n    #Get actor page links\n    links = actor_section.css('ol.people.credits li a::attr(href)').getall()\n\n    #Remove duplicate links\n    links_unique = list(set(links))\n\n    #Loop through the actor links and yield a request for each one\n    #and then call parse_actor_page\n    for actor_link in links_unique:\n        yield scrapy.Request(('https://www.themoviedb.org' + actor_link), callback=self.parse_actor_page)\n\nFinally, we have parse_actor_page(self, response).\nThis method starts on the page of an actor. We need two things: the actor’s name, and the list of all movies that they played an ‘acting’ role in. In order to get only the movies with an acting role, first we get the list of headings (acting, crew, etc.). Then we only look at the section where the heading matches ‘Acting’. Then we can get the acting section of the page, and from there, the list of movies. Finally, we can yield a dictionary for each movie with the actor’s name and the movie or show name.\n\ndef parse_actor_page(self, response):\n    '''\n    The parse_actor_page method\n    Assuming start on the page of an actor\n    Yields dictionaries with elements of actors and their movies\n    '''\n\n    #Get actor name\n    actor_name = response.css('div.title h2.title a::text').get()\n\n    #Get the section headings\n    headings = response.css('div.credits_list h3::text').getall()\n\n    #Loop through the section headings\n    for i in range(len(headings)):\n        #Check if the heading is acting\n        if headings[i] == 'Acting':\n\n            #Then get the full acting section\n            acting_section = response.css('div.credits_list table.card.credits')[i]\n\n            #Get list of movie/show names\n            movies = acting_section.css('a.tooltip bdi::text').getall()\n\n            #Remove duplicates\n            movies_unique = list(set(movies))\n\n            #Finally, loop through movie names\n            for movie_or_TV_name in movies_unique:\n \n                #Yield a dictionary for each of the movies or TV shows\n                #that the actor has worked in an acting role\n                yield{\n                    'actor' : actor_name,\n                    'movie or show name' : movie_or_TV_name\n                }\n\nThat’s it for the spider! To actually run it, go to the terminal and run:\nscrapy crawl tmdb_spider -o results.csv -a subdir=324857-spider-man-into-the-spider-verse\nYou can use a different subdir link for a movie you like; I wanted to do Spiderman Into the SpiderVerse.\n\n\nVisualization\nNow let’s visualize the data that we got. We can make a table that shows the top movies that share the highest number of actors from the given movie.\n\nimport pandas as pd\n\n\ndf = pd.read_csv('results.csv')\n\nNow that we have read in the results, let’s see what it looks like.\n\ndf\n\n\n\n\n\n\n\n\nactor\nmovie or show name\n\n\n\n\n0\nJoaquín Cosío\nNatural Born Narco\n\n\n1\nJoaquín Cosío\nTin Man\n\n\n2\nJoaquín Cosío\nEl mar muerto\n\n\n3\nJoaquín Cosío\nEstrella de Plata\n\n\n4\nJoaquín Cosío\nVidas violentas\n\n\n...\n...\n...\n\n\n2948\nJoseph Sanfelippo\nThe Founder\n\n\n2949\nJoseph Sanfelippo\nCarolina Parakeet\n\n\n2950\nJoseph Sanfelippo\nEver After High: True Hearts Day\n\n\n2951\nJoseph Sanfelippo\nEver After High: Dragon Games\n\n\n2952\nJoseph Sanfelippo\nHotel Transylvania 2\n\n\n\n\n2953 rows × 2 columns\n\n\n\nNow let’s make a sorted table:\n\nmovie_actor_counts = df.groupby('movie or show name')['actor'].nunique().reset_index()\nmovie_actor_counts.rename(columns={'actor': 'shared_actors'}, inplace=True)\n\n# Sort by the number of shared actors in descending order\nmovie_actor_counts_sorted = movie_actor_counts.sort_values(by='shared_actors', ascending=False)\n\nLet’s look at the top ten movies or shows with shared actors:\n\nmovie_actor_counts_sorted[:10]\n\n\n\n\n\n\n\n\nmovie or show name\nshared_actors\n\n\n\n\n1578\nSpider-Man: Into the Spider-Verse\n73\n\n\n1573\nSpider-Man: Across the Spider-Verse\n32\n\n\n982\nLate Night with Seth Meyers\n12\n\n\n1576\nSpider-Man: Beyond the Spider-Verse\n11\n\n\n2062\nThe Tonight Show Starring Jimmy Fallon\n10\n\n\n1463\nSaturday Night Live\n9\n\n\n2196\nVariety Studio: Actors on Actors\n9\n\n\n2042\nThe Star\n9\n\n\n2241\nWhat If...?\n7\n\n\n1913\nThe Late Show with Stephen Colbert\n7\n\n\n\n\n\n\n\nAs expected, the Spider-Man movies are at the top. Interestingly, there are also several late night shows with the most shared actors: Seth Meyers, Jimmy Fallon, SNL, and Stephen Colbert.\nFinally, let’s make a bar chart to visualize this data.\n\nimport matplotlib.pyplot as plt\n\n\n#Create plot\nfig, ax = plt.subplots(1, figsize = (10,5))\n\n#Get top ten\ntop_movies = movie_actor_counts_sorted[:10]\n\n#Shorten names so they don't overlap\ndef shorten_movie_names(movie_name, max_length=8):\n    if len(movie_name) &gt; max_length:\n        return movie_name[:max_length] + \"...\"\n    else:\n        return movie_name\n    \ntop_movies.loc[:, 'movie or show name'] = top_movies['movie or show name'].apply(shorten_movie_names)\n\n#Create bar chart\nax.bar(top_movies['movie or show name'], top_movies['shared_actors'])\n\n#Set labels\nplt.xlabel('Movie or Show', fontsize=12)\nplt.ylabel('Number of Shared Actors', fontsize=12)\nplt.title('Recommended Top Movies or Shows with Shared Actors')\n\nplt.show()\n\n\n\n\n\n\n\n\nThat’s all, thanks for reading!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
   }
 ]
